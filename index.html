@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>0-2 單字聽音辨義測驗</title>
+  <title>0-4 單字聽音辨義測驗</title>
   <style>
     body {
       font-family: sans-serif;
@@ -70,8 +70,8 @@
 </head>
 <body>
   <img src="logo.png" alt="Logo" id="logo" />
-  <div id="game-title">0-2 單字聽音辨義測驗</div>
-  <p id="question-number">第 1 題 / 共 16 題</p>
+  <div id="game-title">0-4 單字聽音辨義測驗</div>
+  <p id="question-number">第 1 題 / 共 12 題</p>
   <p id="timer">剩餘時間：-- 秒</p>
   <audio id="audio" controls></audio>
   <div id="choices"></div>
@@ -92,25 +92,22 @@
   </div>
 
   <script>
-    const gameTitle = "0-2 單字聽音辨義測驗";
+    const gameTitle = "0-4 單字聽音辨義測驗";
 
     const questions = [
-     { "word": "國家", "korean": "나라", "audio": "audio/000201W.mp3", "choices": ["國家", "鈴鐺", "海"] },
-     { "word": "樹", "korean": "나무", "audio": "audio/000202W.mp3", "choices": ["雨", "樹", "火"] },
-     { "word": "年齡", "korean": "나이", "audio": "audio/000203W.mp3", "choices": ["國家", "年齡", "名字"] },
-     { "word": "姊姊", "korean": "누나", "audio": "audio/000204W.mp3", "choices": ["哥哥", "姊姊", "弟弟"] },
-     { "word": "謠言", "korean": "루머", "audio": "audio/000205W.mp3", "choices": ["謠言", "房間", "旅館"] },
-     { "word": "頭", "korean": "머리", "audio": "audio/000206W.mp3", "choices": ["髮型", "頭", "臉"] },
-     { "word": "免費", "korean": "무료", "audio": "audio/000207W.mp3", "choices": ["免費", "不開心", "沒有人"] },
-     { "word": "不", "korean": "아니요", "audio": "audio/000208W.mp3", "choices": ["對不起", "不", "謝謝"] },
-     { "word": "哪個", "korean": "어느", "audio": "audio/000209W.mp3", "choices": ["哪個", "誰的", "幾個"] },
-     { "word": "母親", "korean": "어머니", "audio": "audio/000210W.mp3", "choices": ["母親", "女兒", "祖母"] },
-     { "word": "下午", "korean": "오후", "audio": "audio/000211W.mp3", "choices": ["上午", "中午", "下午"] },
-     { "word": "額頭", "korean": "이마", "audio": "audio/000212W.mp3", "choices": ["額頭", "臉頰", "下巴"] },
-     { "word": "阿姨", "korean": "이모", "audio": "audio/000213W.mp3", "choices": ["阿姨", "姑姑", "媽媽"] },
-     { "word": "河馬", "korean": "하마", "audio": "audio/000214W.mp3", "choices": ["河馬", "鯨魚", "青蛙"] },
-     { "word": "腰", "korean": "허리", "audio": "audio/000215W.mp3", "choices": ["脖子", "腰", "臀部"] },
-     { "word": "舌頭", "korean": "혀", "audio": "audio/000216W.mp3", "choices": ["嘴唇", "牙齒", "舌頭"] }
+  { "word": "粉", "korean": "가루", "audio": "audio/000401W.mp3", "choices": ["粉", "糖", "鹽"] },
+  { "word": "姑姑", "korean": "고모", "audio": "audio/000402W.mp3", "choices": ["姑姑", "阿姨", "媽媽"] },
+  { "word": "瑜珈", "korean": "요가", "audio": "audio/000403W.mp3", "choices": ["運動", "瑜珈", "舞蹈"] },
+  { "word": "地瓜", "korean": "고구마", "audio": "audio/000404W.mp3", "choices": ["馬鈴薯", "地瓜", "紅蘿蔔"] },
+  { "word": "卡片", "korean": "카드", "audio": "audio/000405W.mp3", "choices": ["鈔票", "卡片", "票券"] },
+  { "word": "麥克風", "korean": "마이크", "audio": "audio/000406W.mp3", "choices": ["喇叭", "耳機", "麥克風"] },
+  { "word": "餅乾", "korean": "쿠키", "audio": "audio/000407W.mp3", "choices": ["蛋糕", "餅乾", "糖果"] },
+  { "word": "鼻子", "korean": "코", "audio": "audio/000408W.mp3", "choices": ["鼻子", "嘴巴", "耳朵"] },
+  { "word": "尾巴", "korean": "꼬리", "audio": "audio/000409W.mp3", "choices": ["角", "尾巴", "爪子"] },
+  { "word": "癩蛤蟆", "korean": "두꺼비", "audio": "audio/000410W.mp3", "choices": ["青蛙", "癩蛤蟆", "蛇"] },
+  { "word": "大象", "korean": "코끼리", "audio": "audio/000411W.mp3", "choices": ["大象", "長頸鹿", "獅子"] },
+  { "word": "小不點", "korean": "꼬마", "audio": "audio/000412W.mp3", "choices": ["嬰兒", "老人", "小不點"] }
+
 
 
     ];
@@ -119,7 +116,7 @@
     let current = 0;
     let correct = 0;
     let timerId;
-    const totalSeconds = shuffledQuestions.length * 5;
+    const totalSeconds = shuffledQuestions.length * 8;
     let timeLeft = totalSeconds;
 
     const audio = document.getElementById("audio");
